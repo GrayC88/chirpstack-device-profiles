@@ -1,9 +1,0 @@
-services:
-  lorawan-device-profiles:
-    build:
-      context: .
-    command: --run 'make nix-start'
-    ports:
-      - 8090:8090
-    volumes:
-      - ./:/lorawan-device-profiles

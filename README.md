@@ -1,6 +1,6 @@
-# LoRaWAN(R) device-profiles
+# ChirpStack device-profiles
 
-This repository contains device-profiles for LoRaWAN devices grouped by
+This repository contains ChirpStack device-profiles for LoRaWAN devices grouped by
 vendor. A device-profile contains important information about the capabilities
 of the device. For example which LoRaWAN mac-version has been implemented,
 which regions are supported, if the device supports Class-B or Class-C, etc...
@@ -17,7 +17,7 @@ be imported by ChirpStack or potentially any other LNS.
 ### Starting the web-interface
 
 * Please make sure that you have Docker Compose installed.
-* In the root of this repository, execute `docker compose up`.
+* In the root of this repository, execute `make serve`.
 * Once `Starting server, bind: 0.0.0.0:8090` appears, open the web-interface in your browser by navigating to [http://localhost:8090](http://localhost:8090).
 
 ### Add Vendor(s)

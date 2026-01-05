@@ -1,11 +1,18 @@
 .PHONY: test nix-start nix-test
 
+serve:
+	docker pull chirpstack/chirpstack-device-profiles:latest
+	docker run --rm -p 8090:8090 -v '$(shell pwd):/chirpstack-device-profiles' chirpstack/chirpstack-device-profiles:latest -p /chirpstack-device-profiles
+
+build:
+	cd interface && make api ui release-amd64
+
+dev-shell:
+	nix-shell
+
 test:
-	docker compose run --rm lorawan-device-profiles --run 'make nix-test'
-
-nix-start:
-	cd interface && make ui && cargo run
-
-nix-test:
 	cd interface && make api ui
 	cd interface && cargo run run-tests
+
+dev-dependencies:
+	cargo install cross --git https://github.com/cross-rs/cross --rev c7dee4d008475ce1c140773cbcd6078f4b86c2aa --locked
