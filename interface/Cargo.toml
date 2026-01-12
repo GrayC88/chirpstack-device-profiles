@@ -32,7 +32,7 @@
     "v4",
     "serde",
   ] }
-  rquickjs = { version = "0.10", features = ["loader", "array-buffer"] }
+  rquickjs = { version = "0.11", features = ["loader", "array-buffer"] }
 
 [build-dependencies]
   tonic-build = "0.14"
