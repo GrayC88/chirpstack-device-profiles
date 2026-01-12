@@ -10,7 +10,10 @@ profiles = [
     "AU915-1_0_3.toml",
     "EU868-1_0_3.toml",
     "US915-1_0_3.toml",
+    "IN865-1_0_3.toml",
+    "KR920-1_0_3.toml",
 ]
+codec = "SenseCAP-S2100.js"
 
 [device.metadata]
 product_url = "https://www.seeedstudio.com/SenseCAP-S2100-LoRaWAN-Data-Logger-p-5361.html"
