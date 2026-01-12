@@ -18,7 +18,6 @@ pub struct Vendor {
     pub name: String,
     pub vendor_id: u32,
     pub ouis: Vec<String>,
-    pub devices: Vec<String>,
     pub metadata: VendorMetadata,
 }
 
@@ -29,7 +28,6 @@ impl Default for Vendor {
             name: "".into(),
             vendor_id: 0,
             ouis: vec![],
-            devices: vec![],
             metadata: VendorMetadata::default(),
         }
     }
@@ -163,7 +161,6 @@ impl From<&api::Vendor> for VendorConfiguration {
                 name: value.name.clone(),
                 vendor_id: value.lora_alliance_vendor_id,
                 ouis: value.ouis.clone(),
-                devices: value.devices.clone(),
                 metadata: VendorMetadata {
                     homepage: value.metadata.as_ref().map(|v| v.homepage.clone()),
                 },
@@ -180,7 +177,6 @@ impl From<&VendorConfiguration> for api::Vendor {
             name: value.vendor.name.clone(),
             lora_alliance_vendor_id: value.vendor.vendor_id,
             ouis: value.vendor.ouis.clone(),
-            devices: value.vendor.devices.clone(),
             metadata: Some(api::VendorMetadata {
                 homepage: value.vendor.metadata.homepage.clone().unwrap_or_default(),
             }),
